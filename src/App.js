@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Card from "./components/UI/Card";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
 
 function App() {
   const expenses = [
@@ -26,21 +27,34 @@ function App() {
       location: "Vaishali",
     },
   ];
+
+  // const component =[];
+  // for(let i=0;i<expenses.length;i++){
+  //   let exp = expenses[i]
+  //   component.push(<ExpenseItem title ={exp.title}
+  //   amount ={exp.amount}
+  //   date ={exp.date}
+  //   location ={exp.location}>
+  //  </ExpenseItem>)
+  // }
   return (
-    <div>
+    <Card>
       <h2>Let's get started!</h2>
       <div>
-        {
-          expenses.map(exp =>(
-            <ExpenseItem title ={exp.title}
-            amount ={exp.amount}
-            date ={exp.date}
-             location ={exp.location}>
-            </ExpenseItem>
+         {
+            expenses.map(exp =>(
+              <ExpenseItem title ={exp.title}
+               amount ={exp.amount}
+               date ={exp.date}
+               location ={exp.location}>
+              </ExpenseItem>
           ))
-        }
+          } 
+          {/* {
+            component
+          } */}
        </div>      
-    </div>
+    </Card>
   );
 }
 
