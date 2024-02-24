@@ -1,20 +1,25 @@
+import React ,{ useState } from 'react';
 import './ExpenseForm.css';
 
 function ExpenseForm(){
+    const [enteredTitle , setenteredTitle] = useState('');
+    const [enteredAmount , setenteredAmount] = useState('');
+    const [enteredDate , setenteredDate] = useState('');
+    const [enteredLocation , setenteredLocation] = useState('');
     const titleChangeHandler =(event)=>{
-        console.log(event.target.value);
+        setenteredTitle(event.target.value);
     }
 
     const amountChangeHandler=(event)=>{
-        console.log(event.target.value);
+        setenteredAmount(event.target.value);
     }
 
     const dateChangeHandler =(event)=>{
-        console.log(event.target.value);
+        setenteredDate(event.target.value);
     }
 
     const locationChangeHandler =(event) =>{
-        console.log(event.target.value);
+        setenteredLocation(event.target.value);
     }
   return(
     <form>
@@ -36,7 +41,7 @@ function ExpenseForm(){
             <input type="text" id="location" onChange={locationChangeHandler}></input>
         </div>
         <div className='new-expense__actions'>
-            <button type='submit'>Save</button>
+            <button type='submit'>Add Expense</button>
         </div>
     </form>
   )
